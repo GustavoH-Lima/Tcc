@@ -1,0 +1,3 @@
+- [ ] Adicionar v6 das mutiplicações: Blocagem
+- [ ] Adicionar v7 das multiplicações: Strassen?
+- [ ] Criar Pandas para analisar o consumo de energia
