@@ -40,7 +40,7 @@ double** le_matriz(char **argv,int i, int *tam)
     fp = fopen(argv[i],"rb");
     if(!fp)
     {
-        printf("Não foi possível ler a matriz\n");
+        printf("Não foi possível ler a matriz %s\n",argv[i]);
         exit(1);
     }
     fread(tam,sizeof(int),1,fp);
