@@ -14,7 +14,7 @@ int main(int argc, char** argv)
     FILE *fp;
     int novo_tam = tam * tam;
     /*Alocando a matriz*/
-    float *M = (float*) malloc(novo_tam*sizeof(float));
+    double *M = (double*) malloc(novo_tam*sizeof(double));
     if(!M)
     {
         printf("Não foi possível alocar a matriz\n");
@@ -30,7 +30,7 @@ int main(int argc, char** argv)
     /*Escrevendo no arquivo*/
     fp = fopen(argv[1],"wb+");
     fwrite(&tam,sizeof(int),1,fp);
-    fwrite(M,sizeof(float),novo_tam,fp);
+    fwrite(M,sizeof(double),novo_tam,fp);
 
     fclose(fp);
     return 0;
