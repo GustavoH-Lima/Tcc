@@ -3,3 +3,4 @@
 - [ ] Criar Pandas para analisar o consumo de energia
 - [ ] Implementar modo melhor de tomar os tempos (Precisa?)
 - [ ] Estudar mais como tomar as medidas de energia usando o scaphandre
+- [ ] Escrever o Shell de teste
