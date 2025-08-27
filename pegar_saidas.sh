@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mede_energia()
 {
     sudo scaphandre stdout -t-1 -s 1 --raw-metrics >Saida &
@@ -20,24 +22,25 @@ mede_energia()
     rm medidas
 }
 
+matdim=$1
 ./gera m1 $matdim
 ./gera m2 $matdim
 
-echo "versao;exec1;exec2;exec3;exec4;exec5" > "tabelas/tempos{$matdim}.csv"
-echo "versao;exec1;exec2;exec3;exec4;exec5" > "tabelas/energia{$matdim}.csv"
+echo "versao;exec1;exec2;exec3;exec4;exec5" > "tabelas/tempos_$matdim.csv"
+echo "versao;exec1;exec2;exec3;exec4;exec5" > "tabelas/energia_$matdim.csv"
 
-for ((i = 1;i<= 6;i++)); do
+for ((i = 1; i<=6; i++)); do
     #Colocando a versão a ser rodada
     linha_tempo="$i"
     linha_energia="$i"
     for ((j = 1; j<=5;j++)); do
         echo "Executando versão $i vez $j"
         mede_energia $i
-        tempo=$(echo "$tempo" | sed 's/./,/') #Trocando o ponto por , para adaptar ao google planilhas
-        energia=$(echo "$energia" | sed 's/./,/') #Novamente, trocando "." por ","
+        tempo=$(echo "$tempo" | sed 's/\./,/') #Trocando o ponto por , para adaptar ao google planilhas
+        energia=$(echo "$energia" | sed 's/\./,/') #Novamente, trocando "." por ","
         linha_energia+=";$energia"
         linha_tempo+=";$tempo"
     done
-    echo "$linha_energia" >> tabelas/energia{$matdim}.csv
-    echo "$linha_tempo" >> tabelas/tempos{$matdim}.csv
+    echo "$linha_energia" >> tabelas/energia_$matdim.csv
+    echo "$linha_tempo" >> tabelas/tempos_$matdim.csv
 done
