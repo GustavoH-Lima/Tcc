@@ -69,7 +69,7 @@ int main(int argc, char** argv)
 
         case 6:
             transpor(B2,tam);
-            C2 = v6(A2,B2,tam,2);
+            C2 = v6(A2,B2,tam,8);
             // puts("C - v6");
             // imprime_vetor(C2,tam);
         default:

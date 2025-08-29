@@ -1,6 +1,6 @@
 - [X] Adicionar v6 das mutiplicações: Blocagem
 - [ ] Adicionar v7 das multiplicações: Strassen?
-- [ ] Criar Pandas para analisar o consumo de energia
-- [ ] Implementar modo melhor de tomar os tempos (Precisa?)
-- [ ] Estudar mais como tomar as medidas de energia usando o scaphandre
-- [ ] Escrever o Shell de teste
+- [-] Criar Pandas para analisar o consumo de energia
+- [X] Implementar modo melhor de tomar os tempos (Precisa?)
+- [X] Estudar mais como tomar as medidas de energia usando o scaphandre
+- [X] Escrever o Shell de teste
