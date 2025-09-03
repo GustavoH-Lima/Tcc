@@ -6,11 +6,11 @@ mede_energia()
     pid=$!
 
     tempo=$(./mult m1 m2 $1)
-
+    pidp=$!
     sudo kill $pid
 
     #Agora, uso uma expressão regular para pegar as linhas em que foi medido a potência do processo.
-    grep -E "power.*[0-9]*\.[0-9]*.*mult" Saida > ER
+    grep -E "power.*[0-9]*\.[0-9]*.*$pid" Saida > ER
     rm Saida
     #Agora, outra expressão regular para pegar só os números
 
