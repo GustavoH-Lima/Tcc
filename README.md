@@ -17,12 +17,10 @@
 - [ ] Capítulo 1 está bom?
 - [ ] Capítulo 2 está bom?
 - [ ] Coloco exemplo de saída Json no texto?
-- [ ] Quais métricas seria interessante pegar?
+- [ ] Quais métricas seria interessante pegar?\\
     Disponíveis:
-
-    scaph_process_disk_write_bytes # Data written on disk by the process, in bytes
-    
-    scaph_process_power_consumption_microwatts # Total data read on disk by the process, in bytes
+    scaph_process_disk_write_bytes # Data written on disk by the process, in bytes\\
+    scaph_process_power_consumption_microwatts # Total data read on disk by the process, in bytes\\
     
     scaph_process_disk_total_read_bytes # Total data read on disk by the process, in bytes
     
