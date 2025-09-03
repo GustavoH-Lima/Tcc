@@ -14,7 +14,7 @@ mede_energia()
 
     wait $pid
     #Agora, uso uma expressão regular para pegar as linhas em que foi medido a potência do processo.
-    grep -E "power.*[0-9]*\.[0-9]*.*$pidmult" Saida > ER
+    grep -E "power.*[0-9]*\.[0-9]*.*$pidmult.*mult.*" Saida > ER
     rm Saida
     #Agora, outra expressão regular para pegar só os números
 
