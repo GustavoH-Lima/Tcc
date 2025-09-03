@@ -5,12 +5,14 @@ mede_energia()
     sudo scaphandre stdout -t-1 -s 1 --raw-metrics >Saida &
     pid=$!
 
-    tempo=$(./mult m1 m2 $1)
+    ./mult m1 m2 $1 >mult_s &
     pidp=$!
+    wait $pidp
     sudo kill $pid
-
+    tempo=$(cat mult_s)
+    rm mult_s
     #Agora, uso uma expressão regular para pegar as linhas em que foi medido a potência do processo.
-    grep -E "power.*[0-9]*\.[0-9]*.*$pid" Saida > ER
+    grep -E "power.*[0-9]*\.[0-9]*.*$pidp" Saida > ER
     rm Saida
     #Agora, outra expressão regular para pegar só os números
 

@@ -165,7 +165,8 @@ double** v3(double*A,double*B,int tam) /*Algoritmo linearizando a matriz fazendo
 }
 double** v4(double*A,double*B,int tam) /*Algoritmo linearizando a matriz fazendo acesso com ponteiros além de desenrolar o laço*/
 {/*Desenrolar o laço consiste em fazer mais operações por laço a fim de diminuir o overhead de controle*/
-    double **C, temp;
+    double **C; 
+    double temp;
     C = aloca_matriz(tam);
     int i,j,k;
     for(i = 0;i<tam;i++)
