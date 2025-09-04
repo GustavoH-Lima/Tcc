@@ -5,7 +5,7 @@
 - [X] Estudar mais como tomar as medidas de energia usando o scaphandre
 - [X] Escrever o Shell de teste
 
-## Tarefas do período 26/08 - 04/07
+## Tarefas do período 26/08 - 04/09
 - [X] Estudo do Scaphandre
 - [X] Método para conseguir o consumo de energia da CPU
 - [X] Texto: Inclusão de autor na Revisão sobre Computação Verde
@@ -13,11 +13,15 @@
 - [X] Texto: Capítulo 1
 - [X] Texto: Revisão Bibliográfica
 
-## Perguntas 04/07
+## Perguntas 04/09
 - [ ] Capítulo 1 está bom?
 - [ ] Capítulo 2 está bom?
-- [ ] Coloco exemplo de saída Json no texto?
+- [ ] Coloco exemplo de saída Json no texto? Sim
 - [ ] Quais métricas seria interessante pegar?
+
+## Tarefas do período 04/09 - 11/09
+- [ ] Entender as métricas melhor (Comparar as métricas para uma mesma versão mas variando o tamanho da matriz) *
+- [ ] Explorar o exporter json para pegar os "dram"...
 
 Disponíveis:
 - [ ] scaph_process_disk_write_bytes # Data written on disk by the process, in bytes
