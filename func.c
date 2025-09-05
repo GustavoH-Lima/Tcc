@@ -93,6 +93,25 @@ void imprime_vetor(double *m, int tam)
     }
 }
 
+void escreve_arquivo_vect(char *nome,int tam,double*V)
+{
+    FILE *fp;
+    fp = fopen(nome,"wb");
+    int novo_tam = tam*tam;
+    fwrite(V,sizeof(double),novo_tam,fp);
+    fclose(fp);
+}
+
+void escreve_arquivo_matriz(char *nome,int tam,double **V)
+{
+    FILE *fp;
+    fp = fopen(nome,"wb");
+    for(int i = 0; i<tam;i++)
+    {
+        fwrite(V[i],sizeof(double),tam,fp);
+    }
+    fclose(fp);
+}
 void transpor(double* M,int tam)
 {
     double temp;
@@ -196,38 +215,47 @@ double** v5(double*A,double*B,int tam) /*Algoritmo linearizando a matriz fazendo
         for(j=0;j<tam;j++)
         {
             temp = 0;
-            for (k=0;k<tam;k+=4)
+            for (k=0;k + 3<tam;k+=4)
             {
                 temp += A[i*tam + k + 0] * B[(j*tam + k + 0)];
                 temp += A[i*tam + k + 1] * B[(j*tam + k + 1)];
                 temp += A[i*tam + k + 2] * B[(j*tam + k + 2)];
                 temp += A[i*tam + k + 3] * B[(j*tam + k + 3)];
             }
+            for (; k < tam; k++)
+                temp += A[i * tam + k] * B[k * tam + j];
+
             C[i][j] = temp;
         }
     }
     return C;
 }
-double* v6(double*A,double*B,int tam,int blockSize)/*Algoritmo linearizando a matriz fazendo acesso com ponteiros além de desenrolar o laço, transpor a matriz B e utilizar a blocagem*/
+
+double** v6(double*A,double*B,int tam,int blockSize)/*Algoritmo linearizando a matriz fazendo acesso com ponteiros além de desenrolar o laço, transpor a matriz B e utilizar a blocagem*/
 {
-    double *C;
-    C = (double *) calloc (tam * tam,sizeof(double));
+    double **C;
+    C = aloca_matriz(tam);
     if(!C)
     {
         printf("Não foi possível alocar a matriz\n");
         exit(1);
     }
     
-    for (int ii = 0; ii < tam; ii += blockSize)
-        for (int jj = 0; jj < tam; jj += blockSize)
-            for (int kk = 0; kk < tam; kk += blockSize)
-                for (int i = ii; i < ii + blockSize && i < tam; i++)
-                    for (int j = jj; j < jj + blockSize && j < tam; j++)
-                    {
-                        double sum = 0.0;
-                        for (int k = kk; k < kk + blockSize && k < tam; k++)
+    for (int ii = 0; ii < tam; ii += blockSize) {
+        for (int jj = 0; jj < tam; jj += blockSize) {
+            for (int i = ii; i < ii + blockSize && i < tam; i++) {
+                for (int j = jj; j < jj + blockSize && j < tam; j++) {
+                    double sum = 0.0;
+                    for (int kk = 0; kk < tam; kk += blockSize) {
+                        for (int k = kk; k < kk + blockSize && k < tam; k++) {
                             sum += A[i * tam + k] * B[j * tam + k];
-                        C[i * tam + j] += sum;
+                        }
                     }
+                    C[i][j] = sum;
+                }
+            }
+        }
+    }
+
     return C;
 }
