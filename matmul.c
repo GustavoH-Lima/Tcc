@@ -45,7 +45,7 @@ int main(int argc, char** argv)
     }
     else
     {
-        double *A2, *B2, *C2;
+        double *A2, *B2;
         A2 = le_vetor(argv,1,&tam);
         B2 = le_vetor(argv,2,&tam);
         inicio = omp_get_wtime();
@@ -69,14 +69,20 @@ int main(int argc, char** argv)
 
         case 6:
             transpor(B2,tam);
-            C2 = v6(A2,B2,tam,16);
+            C = v6(A2,B2,tam,16);
+            // imprime_vetor(C2,tam);
             // puts("C - v6");
             // imprime_vetor(C2,tam);
+
         default:
             break;
         }        
         fim = omp_get_wtime();
     }
+    imprime_matriz(C,tam);
+    escreve_arquivo_matriz("Resultado",tam,C);
+    free (C);
     printf("%lf",fim - inicio);
+    
     return 0;
 }
