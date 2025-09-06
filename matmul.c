@@ -78,11 +78,12 @@ int main(int argc, char** argv)
             break;
         }        
         fim = omp_get_wtime();
+        free(A2);
+        free(B2);
     }
-    imprime_matriz(C,tam);
+    // imprime_matriz(C,tam);
     escreve_arquivo_matriz("Resultado",tam,C);
-    free (C);
     printf("%lf",fim - inicio);
-    
+    free (C);
     return 0;
 }
