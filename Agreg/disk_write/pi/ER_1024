@@ -1,0 +1,8 @@
+scaph_process_disk_write_bytes = 0 {"pid":"67078","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","cmdline":"./testes_variaveis/pim1m26"} # Data written on disk by the process, in bytes
+scaph_process_disk_write_bytes = 0 {"pid":"67078","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","cmdline":"./testes_variaveis/pim1m26"} # Data written on disk by the process, in bytes
+scaph_process_disk_write_bytes = 0 {"pid":"67078","cmdline":"./testes_variaveis/pim1m26","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi"} # Data written on disk by the process, in bytes
+scaph_process_disk_write_bytes = 0 {"pid":"67078","cmdline":"./testes_variaveis/pim1m26","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi"} # Data written on disk by the process, in bytes
+scaph_process_disk_write_bytes = 0 {"pid":"67078","cmdline":"./testes_variaveis/pim1m26","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi"} # Data written on disk by the process, in bytes
+scaph_process_disk_write_bytes = 0 {"pid":"67078","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","cmdline":"./testes_variaveis/pim1m26"} # Data written on disk by the process, in bytes
+scaph_process_disk_write_bytes = 0 {"pid":"67078","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","cmdline":"./testes_variaveis/pim1m26"} # Data written on disk by the process, in bytes
+scaph_process_disk_write_bytes = 0 {"exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","pid":"67078","cmdline":"./testes_variaveis/pim1m26"} # Data written on disk by the process, in bytes

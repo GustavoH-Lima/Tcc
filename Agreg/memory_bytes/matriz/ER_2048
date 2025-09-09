@@ -1,0 +1,15 @@
+scaph_process_memory_bytes = 77168640 {"pid":"70839","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 78249984 {"pid":"70839","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 79060992 {"pid":"70839","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 80142336 {"pid":"70839","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 82845696 {"exe":"/home/gustavo/programas/Tcc/mult","pid":"70839","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 83927040 {"exe":"/home/gustavo/programas/Tcc/mult","pid":"70839","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 87711744 {"pid":"70839","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 88793088 {"pid":"70839","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 89604096 {"pid":"70839","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 95281152 {"pid":"70839","cmdline":"./multm1m26","exe":"/home/gustavo/programas/Tcc/mult"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 96362496 {"pid":"70839","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 98254848 {"pid":"70839","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 99065856 {"exe":"/home/gustavo/programas/Tcc/mult","pid":"70839","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 100147200 {"exe":"/home/gustavo/programas/Tcc/mult","pid":"70839","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes
+scaph_process_memory_bytes = 100958208 {"pid":"70839","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Physical RAM usage by the process, in bytes

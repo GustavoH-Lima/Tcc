@@ -1,0 +1,2 @@
+scaph_process_disk_total_read_bytes = 331776 {"pid":"5754","cmdline":"./multm1m26","exe":"/home/gustavo/programas/Tcc/mult"} # Total data read on disk by the process, in bytes
+scaph_process_disk_total_read_bytes = 331776 {"pid":"5754","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Total data read on disk by the process, in bytes

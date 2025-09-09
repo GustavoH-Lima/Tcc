@@ -1,0 +1,3 @@
+scaph_process_disk_total_write_bytes = 8192 {"exe":"/home/gustavo/programas/Tcc/mult","pid":"6090","cmdline":"./multm1m26"} # Total data written on disk by the process, in bytes
+scaph_process_disk_total_write_bytes = 8192 {"pid":"6090","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Total data written on disk by the process, in bytes
+scaph_process_disk_total_write_bytes = 8192 {"exe":"/home/gustavo/programas/Tcc/mult","pid":"6090","cmdline":"./multm1m26"} # Total data written on disk by the process, in bytes

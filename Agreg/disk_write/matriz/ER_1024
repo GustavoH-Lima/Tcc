@@ -1,0 +1,3 @@
+scaph_process_disk_write_bytes = 0 {"pid":"67677","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Data written on disk by the process, in bytes
+scaph_process_disk_write_bytes = 0 {"pid":"67677","exe":"/home/gustavo/programas/Tcc/mult","cmdline":"./multm1m26"} # Data written on disk by the process, in bytes
+scaph_process_disk_write_bytes = 0 {"exe":"/home/gustavo/programas/Tcc/mult","pid":"67677","cmdline":"./multm1m26"} # Data written on disk by the process, in bytes
