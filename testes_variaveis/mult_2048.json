@@ -1,0 +1,1095 @@
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.603863",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1367256.5,
+            "timestamp": 1757547188.243725,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/scaphandre",
+            "cmdline": "scaphandrejson--resources-t999-s1--max-top-consumers2--filetestes_variaveis/consumo_2048.json",
+            "pid": 11751,
+            "resources_usage": {
+                "cpu_usage": "1.2077295",
+                "cpu_usage_unit": "%",
+                "memory_usage": "19664896",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "299798528",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 64493.234,
+            "timestamp": 1757547188.24363,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.179857",
+                "cpu_usage_unit": "%",
+                "memory_usage": "79241216",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "103821312",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1313081.0,
+            "timestamp": 1757547189.2883546,
+            "container": null
+        },
+        {
+            "exe": "/usr/lib/xorg/Xorg",
+            "cmdline": "/usr/lib/xorg/Xorg-core:0-seatseat0-auth/var/run/lightdm/root/:0-nolistentcpvt7-novtswitch",
+            "pid": 1197,
+            "resources_usage": {
+                "cpu_usage": "0.23980816",
+                "cpu_usage_unit": "%",
+                "memory_usage": "22933504",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "1191788544",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 12505.532,
+            "timestamp": 1757547189.2882998,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.24272",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1359762.0,
+            "timestamp": 1757547190.3262148,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/top",
+            "cmdline": "top",
+            "pid": 6371,
+            "resources_usage": {
+                "cpu_usage": "0.24271844",
+                "cpu_usage_unit": "%",
+                "memory_usage": "3067904",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 13074.634,
+            "timestamp": 1757547190.3261585,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.181597",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1384544.1,
+            "timestamp": 1757547191.3756835,
+            "container": null
+        },
+        {
+            "exe": "/usr/share/code/code",
+            "cmdline": "/usr/share/code/code--type=zygote--no-zygote-sandbox",
+            "pid": 2320,
+            "resources_usage": {
+                "cpu_usage": "0.968523",
+                "cpu_usage_unit": "%",
+                "memory_usage": "46305280",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "35067506688",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 53251.7,
+            "timestamp": 1757547191.3755481,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.304136",
+                "cpu_usage_unit": "%",
+                "memory_usage": "81944576",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1447344.0,
+            "timestamp": 1757547192.419395,
+            "container": null
+        },
+        {
+            "exe": "/usr/share/code/code",
+            "cmdline": "/usr/share/code/code--type=zygote",
+            "pid": 2381,
+            "resources_usage": {
+                "cpu_usage": "2.919708",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 167001.22,
+            "timestamp": 1757547192.4193542,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.365852",
+                "cpu_usage_unit": "%",
+                "memory_usage": "82755584",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "103821312",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1362003.2,
+            "timestamp": 1757547193.458849,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/scaphandre",
+            "cmdline": "scaphandrejson--resources-t999-s1--max-top-consumers2--filetestes_variaveis/consumo_2048.json",
+            "pid": 11751,
+            "resources_usage": {
+                "cpu_usage": "0.73170733",
+                "cpu_usage_unit": "%",
+                "memory_usage": "21000192",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "300609536",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 39288.56,
+            "timestamp": 1757547193.458771,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.307125",
+                "cpu_usage_unit": "%",
+                "memory_usage": "83836928",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1336275.1,
+            "timestamp": 1757547194.5003738,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/scaphandre",
+            "cmdline": "scaphandrejson--resources-t999-s1--max-top-consumers2--filetestes_variaveis/consumo_2048.json",
+            "pid": 11751,
+            "resources_usage": {
+                "cpu_usage": "0.98280096",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 51894.18,
+            "timestamp": 1757547194.5002701,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.547445",
+                "cpu_usage_unit": "%",
+                "memory_usage": "84647936",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1414226.4,
+            "timestamp": 1757547195.5446155,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/top",
+            "cmdline": "top",
+            "pid": 6371,
+            "resources_usage": {
+                "cpu_usage": "0.243309",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 13468.822,
+            "timestamp": 1757547195.544494,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.181597",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1367999.5,
+            "timestamp": 1757547196.5879877,
+            "container": null
+        },
+        {
+            "exe": "/usr/share/code/code",
+            "cmdline": "/usr/share/code/code--type=zygote--no-zygote-sandbox",
+            "pid": 2320,
+            "resources_usage": {
+                "cpu_usage": "0.4842615",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 26307.686,
+            "timestamp": 1757547196.587878,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.615765",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1348636.8,
+            "timestamp": 1757547197.632949,
+            "container": null
+        },
+        {
+            "exe": "/usr/sbin/mysqld",
+            "cmdline": "/usr/sbin/mysqld",
+            "pid": 1212,
+            "resources_usage": {
+                "cpu_usage": "0.24630542",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 12967.66,
+            "timestamp": 1757547197.632819,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.304136",
+                "cpu_usage_unit": "%",
+                "memory_usage": "87351296",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "103821312",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1363010.9,
+            "timestamp": 1757547198.676803,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/top",
+            "cmdline": "top",
+            "pid": 6371,
+            "resources_usage": {
+                "cpu_usage": "0.243309",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 13105.874,
+            "timestamp": 1757547198.6766818,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.365852",
+                "cpu_usage_unit": "%",
+                "memory_usage": "88432640",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1351967.8,
+            "timestamp": 1757547199.7209992,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/scaphandre",
+            "cmdline": "scaphandrejson--resources-t999-s1--max-top-consumers2--filetestes_variaveis/consumo_2048.json",
+            "pid": 11751,
+            "resources_usage": {
+                "cpu_usage": "0.9756098",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 51998.76,
+            "timestamp": 1757547199.720835,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.990099",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1617190.0,
+            "timestamp": 1757547200.7804396,
+            "container": null
+        },
+        {
+            "exe": "/usr/share/code/code",
+            "cmdline": "/usr/share/code/code--type=zygote",
+            "pid": 2381,
+            "resources_usage": {
+                "cpu_usage": "7.4257426",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 462054.28,
+            "timestamp": 1757547200.7803757,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "24.074074",
+                "cpu_usage_unit": "%",
+                "memory_usage": "89784320",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1454249.4,
+            "timestamp": 1757547201.8502483,
+            "container": null
+        },
+        {
+            "exe": "/usr/share/code/code",
+            "cmdline": "/usr/share/code/code--type=zygote",
+            "pid": 2381,
+            "resources_usage": {
+                "cpu_usage": "13.657408",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 825006.9,
+            "timestamp": 1757547201.8502052,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.24272",
+                "cpu_usage_unit": "%",
+                "memory_usage": "90865664",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1294331.0,
+            "timestamp": 1757547202.8914542,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/scaphandre",
+            "cmdline": "scaphandrejson--resources-t999-s1--max-top-consumers2--filetestes_variaveis/consumo_2048.json",
+            "pid": 11751,
+            "resources_usage": {
+                "cpu_usage": "0.9708738",
+                "cpu_usage_unit": "%",
+                "memory_usage": "21811200",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 49781.96,
+            "timestamp": 1757547202.891349,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1287068.2,
+            "timestamp": 1757547203.9324777,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/scaphandre",
+            "cmdline": "scaphandrejson--resources-t999-s1--max-top-consumers2--filetestes_variaveis/consumo_2048.json",
+            "pid": 11751,
+            "resources_usage": {
+                "cpu_usage": "1.2019231",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 61878.285,
+            "timestamp": 1757547203.9323728,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1322084.8,
+            "timestamp": 1757547204.974614,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/top",
+            "cmdline": "top",
+            "pid": 6371,
+            "resources_usage": {
+                "cpu_usage": "0.24038462",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 12712.354,
+            "timestamp": 1757547204.9745195,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.80645",
+                "cpu_usage_unit": "%",
+                "memory_usage": "93839360",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "103821312",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1373049.0,
+            "timestamp": 1757547206.0170417,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/scaphandre",
+            "cmdline": "scaphandrejson--resources-t999-s1--max-top-consumers2--filetestes_variaveis/consumo_2048.json",
+            "pid": 11751,
+            "resources_usage": {
+                "cpu_usage": "0.9925558",
+                "cpu_usage_unit": "%",
+                "memory_usage": "21811200",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 52809.58,
+            "timestamp": 1757547206.0169249,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.183374",
+                "cpu_usage_unit": "%",
+                "memory_usage": "94650368",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "103821312",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1372446.0,
+            "timestamp": 1757547207.0625217,
+            "container": null
+        },
+        {
+            "exe": "/usr/sbin/mysqld",
+            "cmdline": "/usr/sbin/mysqld",
+            "pid": 1212,
+            "resources_usage": {
+                "cpu_usage": "0.24449879",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 13324.72,
+            "timestamp": 1757547207.0624192,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.735294",
+                "cpu_usage_unit": "%",
+                "memory_usage": "95731712",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1345975.8,
+            "timestamp": 1757547208.1034713,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/scaphandre",
+            "cmdline": "scaphandrejson--resources-t999-s1--max-top-consumers2--filetestes_variaveis/consumo_2048.json",
+            "pid": 11751,
+            "resources_usage": {
+                "cpu_usage": "0.9803922",
+                "cpu_usage_unit": "%",
+                "memory_usage": "21811200",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "302092288",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 51275.27,
+            "timestamp": 1757547208.1033738,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.490198",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1331478.2,
+            "timestamp": 1757547209.1519902,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/scaphandre",
+            "cmdline": "scaphandrejson--resources-t999-s1--max-top-consumers2--filetestes_variaveis/consumo_2048.json",
+            "pid": 11751,
+            "resources_usage": {
+                "cpu_usage": "1.2254902",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 64013.37,
+            "timestamp": 1757547209.1519,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.245098",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1319844.2,
+            "timestamp": 1757547210.1905596,
+            "container": null
+        },
+        {
+            "exe": "/usr/lib/xorg/Xorg",
+            "cmdline": "/usr/lib/xorg/Xorg-core:0-seatseat0-auth/var/run/lightdm/root/:0-nolistentcpvt7-novtswitch",
+            "pid": 1197,
+            "resources_usage": {
+                "cpu_usage": "0.24509805",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 12814.022,
+            "timestamp": 1757547210.1904733,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.679012",
+                "cpu_usage_unit": "%",
+                "memory_usage": "98435072",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1341513.2,
+            "timestamp": 1757547211.230796,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/scaphandre",
+            "cmdline": "scaphandrejson--resources-t999-s1--max-top-consumers2--filetestes_variaveis/consumo_2048.json",
+            "pid": 11751,
+            "resources_usage": {
+                "cpu_usage": "1.2345679",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 64495.824,
+            "timestamp": 1757547211.230716,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.495049",
+                "cpu_usage_unit": "%",
+                "memory_usage": "99246080",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1434498.5,
+            "timestamp": 1757547212.2707646,
+            "container": null
+        },
+        {
+            "exe": "/usr/lib/xorg/Xorg",
+            "cmdline": "/usr/lib/xorg/Xorg-core:0-seatseat0-auth/var/run/lightdm/root/:0-nolistentcpvt7-novtswitch",
+            "pid": 1197,
+            "resources_usage": {
+                "cpu_usage": "0.24752475",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 13927.171,
+            "timestamp": 1757547212.270677,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.798527",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1349945.4,
+            "timestamp": 1757547213.315205,
+            "container": null
+        },
+        {
+            "exe": "/usr/sbin/mysqld",
+            "cmdline": "/usr/sbin/mysqld",
+            "pid": 1212,
+            "resources_usage": {
+                "cpu_usage": "0.24570024",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 12856.621,
+            "timestamp": 1757547213.315104,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.121952",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1309607.4,
+            "timestamp": 1757547214.3568094,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/scaphandre",
+            "cmdline": "scaphandrejson--resources-t999-s1--max-top-consumers2--filetestes_variaveis/consumo_2048.json",
+            "pid": 11751,
+            "resources_usage": {
+                "cpu_usage": "0.73170733",
+                "cpu_usage_unit": "%",
+                "memory_usage": "0",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 38143.902,
+            "timestamp": 1757547214.356637,
+            "container": null
+        }
+--
+        {
+            "exe": "/home/gustavo/programas/Tcc/mult",
+            "cmdline": "./multm1m26",
+            "pid": 11749,
+            "resources_usage": {
+                "cpu_usage": "25.552824",
+                "cpu_usage_unit": "%",
+                "memory_usage": "102219776",
+                "memory_usage_unit": "Bytes",
+                "memory_virtual_usage": "0",
+                "memory_virtual_usage_unit": "Bytes",
+                "disk_usage_write": "0",
+                "disk_usage_write_unit": "Bytes",
+                "disk_usage_read": "0",
+                "disk_usage_read_unit": "Bytes"
+            },
+            "consumption": 1321945.2,
+            "timestamp": 1757547215.3984916,
+            "container": null
+        },
+        {
+            "exe": "/usr/bin/scaphandre",
+            "cmdline": "scaphandrejson--resources-t999-s1--max-top-consumers2--filetestes_variaveis/consumo_2048.json",
+            "pid": 11751,
+            "resources_usage": {
+                "cpu_usage": "1.2285012",
+                "cpu_usage_unit": "%",
+                "memory_usage": "21811200",
+                "memory_usage_unit": "Bytes","
