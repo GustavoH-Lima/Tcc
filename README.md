@@ -52,3 +52,7 @@ Realmente, com o passar do tempo de execução, o uso, em bytes, da RAM vai aume
 
 - [X] scaph_process_memory_virtual_bytes # Virtual RAM usage by the process, in bytes
 Aqui parece que o comportamento faz sentido, na matriz 4096, no começo não se usa tanta memória virtual, mas depois se carregam as matrizes e o uso aumenta, talvez testar pra 8192
+
+## tarefas 11/09 - 16/09
+- [ ] Escrever o processo de teste da ferramenta
+- [ ] Anotas ideias de propostas
