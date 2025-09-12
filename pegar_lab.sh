@@ -2,7 +2,7 @@
 
 mede_energia()
 {
-    sudo docker run -v /sys/class/powercap:/sys/class/powercap -v /proc:/proc -i hubblo/scaphandre stdout -t 7 -s 1 --raw-metrics >Saida &
+    sudo docker run -v /sys/class/powercap:/sys/class/powercap -v /proc:/proc -i hubblo/scaphandre stdout -t 999 -s 1 --raw-metrics >Saida &
     pid=$!
 
     ./mult m1 m2 $1 > tmp_tempo &
@@ -12,7 +12,7 @@ mede_energia()
     rm tmp_tempo
 
 
-    wait $pid
+    kill $pid
     #Agora, uso uma expressão regular para pegar as linhas em que foi medido a potência do processo.
     grep -E "power.*[0-9]*\.[0-9]*.*$pidmult.*mult.*" Saida > ER
     rm Saida
