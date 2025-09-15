@@ -56,7 +56,7 @@ extrai_numeros() {
     tempo=$(cat mult_s 2>/dev/null)
 
     for item in "${lista[@]}"; do
-        grep --text -E "$item.*$2.*m1m2" Saida.txt >> "$3/$item/$1/$tamanho"
+        grep --text -E "$item.*$2.*m1m2" Saida.txt | grep -v "grep">> "$3/$item/$1/$tamanho"
     done
 }
 
