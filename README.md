@@ -55,4 +55,8 @@ Aqui parece que o comportamento faz sentido, na matriz 4096, no começo não se 
 
 ## tarefas 11/09 - 16/09
 - [ ] Escrever o processo de teste da ferramenta
-- [ ] Anotas ideias de propostas
+- [ ] Anotar ideias de propostas
+- [ ] Ideia para calcular o consumo da RAM:
+    - durante um tempo, tomar medidas do consumo usando o json com a máquina funcionando normalmente (Sem nada rodando);
+    - Tomar o consumo médio da Dram;
+    - Diminuir esse consumo médio do consumo obtido quando se está executando a multiplicação de matriz desejada.

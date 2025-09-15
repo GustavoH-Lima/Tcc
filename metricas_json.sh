@@ -4,7 +4,7 @@
 # $1:Versão  $2:Quantas rodadas $3 programa a ser executado {./testes_variaveis/pi ou ./mult}
 
 mede_energia() {
-    sudo scaphandre json --resources -t 999 -s 1 --max-top-consumers 2 --file testes_variaveis/consumo_pi.json &
+    sudo scaphandre json --resources -t 999 -s 1 --max-top-consumers 2 --file testes_variaveis/consumo_matriz_$tamanho.json &
     pid=$!
 
     $2 m1 m2 $1 > mult_s &
@@ -20,7 +20,7 @@ mede_energia() {
 
 #Depois de executar, salvar o arquivo json salvado certinho com "ctrl + k + f" (Vscode) e executar o comando
 #grep -A 16 -B 3 "pid" testes_variaveis/consumo_1024.json > testes_variaveis/mult_$tamanho.json
-tamanho=2048
+tamanho=4096
 >pids
 for ((i = 1; i<=$2; i++)); do
     #Colocando a versão a ser rodada
