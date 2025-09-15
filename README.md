@@ -1,3 +1,14 @@
+## Situações
+- [ ] Resumo: Aguardando término do capítulo 5
+- [ ] Capítulo 1: Aguardando Feedback
+- [ ] Capítulo 2: Aguardando Feedback
+- [ ] Documentação da Experiência da ferramenta: Aguardando aval para teste dos componentes do "socket"
+- [ ] Capítulo 3: Aguardando término da escrita da documentação e Realização dos testes
+- [ ] Capítulo 4: Aguardando término do capítulo 3 
+- [ ] Capítulo 5: Aguardando término do capítulo 4
+- [ ] Apêndices / Anexo: Colocar Json de exemplo / Códigos
+
+## Terefas xx/xx - xx/xx
 - [X] Adicionar v6 das mutiplicações: Blocagem
 - [ ] Adicionar v7 das multiplicações: Strassen?
 - [-] Criar Pandas para analisar o consumo de energia
@@ -54,8 +65,9 @@ Realmente, com o passar do tempo de execução, o uso, em bytes, da RAM vai aume
 Aqui parece que o comportamento faz sentido, na matriz 4096, no começo não se usa tanta memória virtual, mas depois se carregam as matrizes e o uso aumenta, talvez testar pra 8192
 
 ## tarefas 11/09 - 16/09
-- [ ] Escrever o processo de teste da ferramenta
-- [ ] Anotar ideias de propostas
+- [X] Escrever o processo de teste da ferramenta
+- [X] Anotar ideias de propostas
+    - No carderno
 - [ ] Ideia para calcular o consumo da RAM:
     - durante um tempo, tomar medidas do consumo usando o json com a máquina funcionando normalmente (Sem nada rodando);
     - Tomar o consumo médio da Dram;

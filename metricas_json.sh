@@ -20,7 +20,7 @@ mede_energia() {
 
 #Depois de executar, salvar o arquivo json salvado certinho com "ctrl + k + f" (Vscode) e executar o comando
 #grep -A 16 -B 3 "pid" testes_variaveis/consumo_1024.json > testes_variaveis/mult_$tamanho.json
-tamanho=4096
+tamanho=1024
 >pids
 for ((i = 1; i<=$2; i++)); do
     #Colocando a versão a ser rodada
