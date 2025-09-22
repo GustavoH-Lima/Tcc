@@ -1,8 +1,0 @@
-scaph_process_disk_read_bytes = 0 {"pid":"48470","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","cmdline":"./testes_variaveis/pim1m26"} # Data read on disk by the process, in bytes
-scaph_process_disk_read_bytes = 0 {"pid":"48470","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","cmdline":"./testes_variaveis/pim1m26"} # Data read on disk by the process, in bytes
-scaph_process_disk_read_bytes = 0 {"pid":"48470","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","cmdline":"./testes_variaveis/pim1m26"} # Data read on disk by the process, in bytes
-scaph_process_disk_read_bytes = 0 {"pid":"48470","cmdline":"./testes_variaveis/pim1m26","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi"} # Data read on disk by the process, in bytes
-scaph_process_disk_read_bytes = 0 {"exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","pid":"48470","cmdline":"./testes_variaveis/pim1m26"} # Data read on disk by the process, in bytes
-scaph_process_disk_read_bytes = 0 {"pid":"48470","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","cmdline":"./testes_variaveis/pim1m26"} # Data read on disk by the process, in bytes
-scaph_process_disk_read_bytes = 0 {"pid":"48470","cmdline":"./testes_variaveis/pim1m26","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi"} # Data read on disk by the process, in bytes
-scaph_process_disk_read_bytes = 0 {"pid":"48470","cmdline":"./testes_variaveis/pim1m26","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi"} # Data read on disk by the process, in bytes

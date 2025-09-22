@@ -1,7 +1,0 @@
-scaph_process_disk_total_write_bytes = 8192 {"pid":"4760","cmdline":"./testes_variaveis/pim1m26","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi"} # Total data written on disk by the process, in bytes
-scaph_process_disk_total_write_bytes = 8192 {"pid":"4760","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","cmdline":"./testes_variaveis/pim1m26"} # Total data written on disk by the process, in bytes
-scaph_process_disk_total_write_bytes = 8192 {"exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","pid":"4760","cmdline":"./testes_variaveis/pim1m26"} # Total data written on disk by the process, in bytes
-scaph_process_disk_total_write_bytes = 8192 {"pid":"4760","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","cmdline":"./testes_variaveis/pim1m26"} # Total data written on disk by the process, in bytes
-scaph_process_disk_total_write_bytes = 8192 {"pid":"4760","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","cmdline":"./testes_variaveis/pim1m26"} # Total data written on disk by the process, in bytes
-scaph_process_disk_total_write_bytes = 8192 {"pid":"4760","cmdline":"./testes_variaveis/pim1m26","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi"} # Total data written on disk by the process, in bytes
-scaph_process_disk_total_write_bytes = 8192 {"pid":"4760","exe":"/home/gustavo/programas/Tcc/testes_variaveis/pi","cmdline":"./testes_variaveis/pim1m26"} # Total data written on disk by the process, in bytes

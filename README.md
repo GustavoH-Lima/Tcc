@@ -8,27 +8,21 @@
 - [ ] Capítulo 5: Aguardando término do capítulo 4
 - [ ] Apêndices / Anexo: Colocar Json de exemplo / Códigos
 
-## Terefas xx/xx - xx/xx
-- [X] Adicionar v6 das mutiplicações: Blocagem
-- [ ] Adicionar v7 das multiplicações: Strassen?
-- [-] Criar Pandas para analisar o consumo de energia
-- [X] Implementar modo melhor de tomar os tempos (Precisa?)
-- [X] Estudar mais como tomar as medidas de energia usando o scaphandre
-- [X] Escrever o Shell de teste
+## Tarefas 16/09 - 25/09
+- [ ] Proposta de Minicurso
+- [ ] Testar calculo da ram
+- [ ] Testar normal (Nada executando)
+- [ ] Testar a Matriz
+- [ ] Testar a matriz com o navegador aberto
 
-## Tarefas do período 26/08 - 04/09
-- [X] Estudo do Scaphandre
-- [X] Método para conseguir o consumo de energia da CPU
-- [X] Texto: Inclusão de autor na Revisão sobre Computação Verde
-- [X] Texto: Scaphandre
-- [X] Texto: Capítulo 1
-- [X] Texto: Revisão Bibliográfica
-
-## Perguntas 04/09
-- [ ] Capítulo 1 está bom?
-- [ ] Capítulo 2 está bom?
-- [X] Coloco exemplo de saída Json no texto?
-- [ ] Quais métricas seria interessante pegar?
+## tarefas 11/09 - 16/09
+- [X] Escrever o processo de teste da ferramenta
+- [X] Anotar ideias de propostas
+    - No carderno
+- [ ] Ideia para calcular o consumo da RAM:
+    - durante um tempo, tomar medidas do consumo usando o json com a máquina funcionando normalmente (Sem nada rodando);
+    - Tomar o consumo médio da Dram;
+    - Diminuir esse consumo médio do consumo obtido quando se está executando a multiplicação de matriz desejada.
 
 ## Tarefas do período 04/09 - 11/09
 - [X] Entender as métricas melhor (Comparar as métricas para uma mesma versão mas variando o tamanho da matriz) *
@@ -64,11 +58,26 @@ Realmente, com o passar do tempo de execução, o uso, em bytes, da RAM vai aume
 - [X] scaph_process_memory_virtual_bytes # Virtual RAM usage by the process, in bytes
 Aqui parece que o comportamento faz sentido, na matriz 4096, no começo não se usa tanta memória virtual, mas depois se carregam as matrizes e o uso aumenta, talvez testar pra 8192
 
-## tarefas 11/09 - 16/09
-- [X] Escrever o processo de teste da ferramenta
-- [X] Anotar ideias de propostas
-    - No carderno
-- [ ] Ideia para calcular o consumo da RAM:
-    - durante um tempo, tomar medidas do consumo usando o json com a máquina funcionando normalmente (Sem nada rodando);
-    - Tomar o consumo médio da Dram;
-    - Diminuir esse consumo médio do consumo obtido quando se está executando a multiplicação de matriz desejada.
+## Tarefas do período 26/08 - 04/09
+- [X] Estudo do Scaphandre
+- [X] Método para conseguir o consumo de energia da CPU
+- [X] Texto: Inclusão de autor na Revisão sobre Computação Verde
+- [X] Texto: Scaphandre
+- [X] Texto: Capítulo 1
+- [X] Texto: Revisão Bibliográfica
+
+## Perguntas 04/09
+- [ ] Capítulo 1 está bom?
+- [ ] Capítulo 2 está bom?
+- [X] Coloco exemplo de saída Json no texto?
+- [ ] Quais métricas seria interessante pegar?
+
+
+
+## Terefas xx/xx - xx/xx
+- [X] Adicionar v6 das mutiplicações: Blocagem
+- [ ] Adicionar v7 das multiplicações: Strassen?
+- [-] Criar Pandas para analisar o consumo de energia
+- [X] Implementar modo melhor de tomar os tempos (Precisa?)
+- [X] Estudar mais como tomar as medidas de energia usando o scaphandre
+- [X] Escrever o Shell de teste
