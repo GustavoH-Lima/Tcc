@@ -10,10 +10,10 @@
 
 ## Tarefas 16/09 - 25/09
 - [ ] Proposta de Minicurso
-- [ ] Testar calculo da ram
-- [ ] Testar normal (Nada executando)
-- [ ] Testar a Matriz
-- [ ] Testar a matriz com o navegador aberto
+- [X] Testar calculo da ram
+- [X] Testar normal (Nada executando) Obtido: 10.2711 J
+- [X] Testar a Matriz Obtido: 10.8079 J
+- [X] Testar a matriz com o navegador aberto Obtido: 38.1356
 
 ## tarefas 11/09 - 16/09
 - [X] Escrever o processo de teste da ferramenta
