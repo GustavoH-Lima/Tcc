@@ -2,11 +2,30 @@
 - [ ] Resumo: Aguardando término do capítulo 5
 - [ ] Capítulo 1: Aguardando Feedback
 - [ ] Capítulo 2: Aguardando Feedback
-- [ ] Documentação da Experiência da ferramenta: Aguardando aval para teste dos componentes do "socket"
+- [ ] Documentação da Experiência da ferramenta: Dizer a máquina em que os testes foram realizados
 - [ ] Capítulo 3: Aguardando término da escrita da documentação e Realização dos testes
 - [ ] Capítulo 4: Aguardando término do capítulo 3 
 - [ ] Capítulo 5: Aguardando término do capítulo 4
 - [ ] Apêndices / Anexo: Colocar Json de exemplo / Códigos
+
+## Tarefas 30/09 - 07/10
+- [ ] Terminar capítulo de experimentação com Scaphandre
+    (No laboratório)
+    -[ ] Verificar as medidas "disk_write_bytes" para o exporter Stdout;
+    -[ ] Verificar as medidas "disk_usage_write" e "consumption" para o exporter Json;
+    -[ ] Vericar, novamente, as outras medidas e determinar se o comentário bate.
+- [ ] Implementar multiplicação de matrizes com paralelismo
+- [ ] Colher dados de multiplicação e gerar tabelas
+    (No Laboratório)
+    - Coletar no laboratório com o código "gera_testes.sh"
+    - [X] Multiplicar a média da ram pelo tempo que demorou na matriz OU;
+    - [X] Considerar o gasto no total, explicando que não é o software isolado mas sim o chipe como um todo sendo executado.
+        - Considerar os dois modos,por enquanto
+- [ ] Buscar artigos do professor Daniel Cordeiro (Computação Sustentável)
+
+
+## Tarefas 25/09 - 30/09
+- [X] Fechar proposta do MiniCurso
 
 ## Tarefas 16/09 - 25/09
 - [ ] Proposta de Minicurso

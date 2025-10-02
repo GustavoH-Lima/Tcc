@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Este programa rodará a versão $1 com os tamanho 1024 até 2^(09 + $2) e armazenará a métrica cujas informações deseja-se coletar
-# $1:Versão  $2:Quantas rodadas $3 nome da pasta
+# $1:Versão  $2:Quantas rodadas $3 nome da pasta a guardar os documentos gerados
 
 lista=("scaph_process_power_consumption_microwatts" \
        "scaph_process_cpu_usage_percentage" \
