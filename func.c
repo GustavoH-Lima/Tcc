@@ -3,7 +3,7 @@ double** aloca_matriz(int tam)
 {
     double **M;
     int i;
-    M = (double**) malloc(tam*sizeof(double*));
+    M = (double**) calloc(tam,sizeof(double*));
     if(!M)
     {
         printf("Não foi possível alocar a matriz\n");
@@ -11,7 +11,7 @@ double** aloca_matriz(int tam)
     }
     for(i=0;i<tam;i++)
     {
-        M[i] = (double*)malloc(tam*sizeof(double));
+        M[i] = (double*)calloc(tam,sizeof(double));
         if(!M[i])
         {
             printf("Não foi possível alocar a matriz\n");
@@ -24,7 +24,7 @@ double** aloca_matriz(int tam)
 double* aloca_vetor(int tam)
 {
     double *M;
-    M = (double*) malloc(tam*sizeof(double));
+    M = (double*) calloc(tam,sizeof(double));
     if(!M)
     {
         printf("Não foi possível alocar a matriz\n");
@@ -223,7 +223,7 @@ double** v5(double*A,double*B,int tam) /*Algoritmo linearizando a matriz fazendo
                 temp += A[i*tam + k + 3] * B[(j*tam + k + 3)];
             }
             for (; k < tam; k++)
-                temp += A[i * tam + k] * B[k * tam + j];
+                temp += A[i * tam + k] * B[j * tam + k];
 
             C[i][j] = temp;
         }
@@ -241,6 +241,156 @@ double** v6(double*A,double*B,int tam,int blockSize)/*Algoritmo linearizando a m
         exit(1);
     }
     
+    for (int ii = 0; ii < tam; ii += blockSize) {
+        for (int jj = 0; jj < tam; jj += blockSize) {
+            for (int i = ii; i < ii + blockSize && i < tam; i++) {
+                for (int j = jj; j < jj + blockSize && j < tam; j++) {
+                    double sum = 0.0;
+                    for (int kk = 0; kk < tam; kk += blockSize) {
+                        for (int k = kk; k < kk + blockSize && k < tam; k++) {
+                            sum += A[i * tam + k] * B[j * tam + k];
+                        }
+                    }
+                    C[i][j] = sum;
+                }
+            }
+        }
+    }
+
+    return C;
+}
+
+double** v1_paralela(double**A,double**B,int tam, int nt) /*Algoritmo ingênuo de Multiplicação de Matrizes, 3 laços aninhados e salvando direto na memória*/
+{
+    double **C;
+    C = aloca_matriz(tam);
+    int i,j,k;
+    
+    #pragma omp parallel for collapse(2) private(i, j, k) num_threads(nt)
+    for(i = 0;i<tam;i++)
+    {
+        for(j=0;j<tam;j++)
+        {
+            C[i][j] = 0;
+            for (k=0;k<tam;k++)
+            {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+    return C;
+}
+
+double** v2_paralela(double**A,double**B,int tam,int nt) /*Algoritmo ingênuo de Multiplicação de Matrizes melhorado, 3 laços aninhados e salvando em variável temporária*/
+{
+    double **C, temp;
+    C = aloca_matriz(tam);
+    int i,j,k;
+    
+    #pragma omp parallel for collapse(2) private(i, j, k, temp) num_threads(nt)
+    for(i = 0;i<tam;i++)
+    {
+        for(j=0;j<tam;j++)
+        {
+            temp = 0;
+            for (k=0;k<tam;k++)
+            {
+                temp += A[i][k] * B[k][j];
+            }
+            C[i][j] = temp;
+        }
+    }
+    return C;
+}
+
+double** v3_paralela(double*A,double*B,int tam,int nt) /*Algoritmo linearizando a matriz fazendo acesso com ponteiros*/
+{
+    double **C, temp;
+    C = aloca_matriz(tam);
+    int i,j,k;
+
+    #pragma omp parallel for collapse(2) private(i, j, k, temp) num_threads(nt)
+    for(i = 0;i<tam;i++)
+    {
+        for(j=0;j<tam;j++)
+        {
+            temp = 0;
+            for (k=0;k<tam;k++)
+            {
+                temp += A[i*tam + k] * B[k*tam + j];
+            }
+            C[i][j] = temp;
+        }
+    }
+    return C;
+}
+
+double** v4_paralela(double*A,double*B,int tam, int nt) /*Algoritmo linearizando a matriz fazendo acesso com ponteiros além de desenrolar o laço*/
+{/*Desenrolar o laço consiste em fazer mais operações por laço a fim de diminuir o overhead de controle*/
+    double **C; 
+    double temp;
+    C = aloca_matriz(tam);
+    int i,j,k;
+
+    #pragma omp parallel for collapse(2) private(i, j, k, temp) num_threads(nt)
+    for(i = 0;i<tam;i++)
+    {
+        for(j=0;j<tam;j++)
+        {
+            temp = 0;
+            for (k=0;k<tam;k+=4)
+            {
+                temp += A[i*tam + k + 0] * B[(k + 0)*tam + j];
+                temp += A[i*tam + k + 1] * B[(k + 1)*tam + j];
+                temp += A[i*tam + k + 2] * B[(k + 2)*tam + j];
+                temp += A[i*tam + k + 3] * B[(k + 3)*tam + j];
+            }
+            C[i][j] = temp;
+        }
+    }
+    return C;
+}
+
+double** v5_paralela(double* A, double* B, int tam, int nt)
+{
+    double **C = aloca_matriz(tam);
+    int k;
+    #pragma omp parallel for collapse(2) private(k) num_threads(nt)
+    for (int i = 0; i < tam; i++) {
+        for (int j = 0; j < tam; j++) {
+            double temp = 0.0;
+
+            // desenrolamento de laço
+            for (k = 0; k + 3 < tam; k += 4) {
+                temp += A[i*tam + k + 0] * B[j*tam + k + 0];
+                temp += A[i*tam + k + 1] * B[j*tam + k + 1];
+                temp += A[i*tam + k + 2] * B[j*tam + k + 2];
+                temp += A[i*tam + k + 3] * B[j*tam + k + 3];
+            }
+
+            // resto
+            for (; k < tam; k++)
+                temp += A[i * tam + k] * B[j * tam + k];
+
+            C[i][j] = temp;
+        }
+    }
+
+    return C;
+}
+
+
+double** v6_paralela(double*A,double*B,int tam,int blockSize,int nt)/*Algoritmo linearizando a matriz fazendo acesso com ponteiros além de desenrolar o laço, transpor a matriz B e utilizar a blocagem*/
+{
+    double **C;
+    C = aloca_matriz(tam);
+    if(!C)
+    {
+        printf("Não foi possível alocar a matriz\n");
+        exit(1);
+    }
+
+    #pragma omp parallel for collapse(2) num_threads(nt)
     for (int ii = 0; ii < tam; ii += blockSize) {
         for (int jj = 0; jj < tam; jj += blockSize) {
             for (int i = ii; i < ii + blockSize && i < tam; i++) {
