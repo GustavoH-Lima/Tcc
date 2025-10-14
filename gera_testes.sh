@@ -47,10 +47,10 @@ if [ ! -d "$2/$matdim" ]; then
     mkdir "$2/$matdim"
 fi
 
-echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/energias_$matdim.csv
-echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/dramtot_$matdim.csv
-echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/tempos_$matdim.csv
-echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/dram_$matdim.csv
+# echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/energias_$matdim.csv
+# echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/dramtot_$matdim.csv
+# echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/tempos_$matdim.csv
+# echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/dram_$matdim.csv
 
 #Tomando a energia média inicial
 energia_inicial
@@ -71,6 +71,7 @@ for ((i = 5; i<=6; i++)); do
         tempo=$(echo "$tempo" | sed 's/\./,/') #Trocando o ponto por , para adaptar ao google planilhas
         energia_processo=$(echo "$energia_processo" | sed 's/\./,/') #Novamente, trocando "." por ","
         energia_dram=$(echo "$energia_dram" | sed 's/\./,/')
+        energia_dramtot=$(echo "$energia_dramtot" | sed 's/\./,/')
 
         linha_energia+=";$energia_processo"
         linha_dram_tot+=";$energia_dramtot"
