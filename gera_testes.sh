@@ -12,28 +12,26 @@ mede_energia(){
     pid_mult=$!
 
     wait $pid_mult
-    sleep 0.5
+    sleep 1.5
     sudo kill $pid_scaphandre
 
     tempo=$(cat mult_time)
     rm mult_time
 
     #Agora, para coletar as métricas de energia, há a necessidade de "formatar" o json e executar as expressões regulares.
-    while ! jq . consumo.json >/dev/null 2>&1; do
-    # remove o último caractere do arquivo
-    truncate -s -1 consumo.json
-    done
+    python3 corrige.py
     sudo jq -s . consumo.json > consumo_formatado.json
-    energia_processo=$(grep -A 2 "pid.*$pid_mult" consumo_formatado.json | grep -E "consumption" | grep -o "[0-9]*.[0-9]*" | awk '{s+=$1/1e6} END{print s}') #Coleta o consumo do processo
-    energia_dramtot=$(grep -A 2 "name.*dram" consumo_formatado.json | grep -E "consumption" | grep -o "[0-9]*" | awk '{s+=$1/1e6} END{print s}') #Coleta o consumo da RAM
+    energia_processo=$(grep -A 2 "pid.*$pid_mult" consumo_formatado.json | grep -E "consumption" | grep -o "[0-9][0-9]*\.*[0-9]*" | awk '{s+=$1/1e6} END{print s}') #Coleta o consumo do processo
+    energia_dramtot=$(grep -A 2 "name.*dram" consumo_formatado.json | grep -E "consumption" | grep -o "[0-9][0-9]*\.*[0-9]*" | awk '{s+=$1/1e6} END{print s}') #Coleta o consumo da RAM
     energia_dram=$(awk -v tot="$energia_dramtot" -v norm="$dram_normal" -v t="$tempo" 'BEGIN {print tot - norm * t}')
 }
+
 energia_inicial(){
     #Vê qual a média de energia gasta "normalmente"
     echo "Coletando energia média inicial..."
     sudo scaphandre json -t 60 -s 1 --resources --max-top-consumers 2 --file consumo.json
     jq -s . consumo.json > consumo_formatado.json
-    dram_normal=$(grep -A 2 "name.*dram" consumo_formatado.json | grep -E "consumption" | grep -o "[0-9]*" | awk '{s+=$1/(60*1e6)} END{print s}') #Coleta o consumo da RAM
+    dram_normal=$(grep -A 2 "name.*dram" consumo_formatado.json | grep -E "consumption" | grep -o "[0-9][0-9]*\.*[0-9]*" | awk '{s+=$1/(60*1e6)} END{print s}') #Coleta o consumo da RAM
 }
 matdim=$1
 #Iniciando os .csv
@@ -47,10 +45,10 @@ if [ ! -d "$2/$matdim" ]; then
     mkdir "$2/$matdim"
 fi
 
-# echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/energias_$matdim.csv
-# echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/dramtot_$matdim.csv
-# echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/tempos_$matdim.csv
-# echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/dram_$matdim.csv
+echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/energias_$matdim.csv
+echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/dramtot_$matdim.csv
+echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/tempos_$matdim.csv
+echo "versao;exec1;exec2;exec3;exec4;exec5" > $2/$matdim/dram_$matdim.csv
 
 #Tomando a energia média inicial
 energia_inicial
