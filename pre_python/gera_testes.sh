@@ -11,6 +11,7 @@ mede_energia(){
     ./mult m1 m2 $1 > mult_time & #Armazena o tempo da multiplicação, executa em segundo plano para obter o pid do processo
     pid_mult=$!
 
+    echo "$pid_mult" > pid_proc
     wait $pid_mult
     sleep 1.5
     sudo kill $pid_scaphandre

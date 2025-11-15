@@ -171,9 +171,6 @@ def salva_media_csv(tamanho, thread, versao, execucoes_T, execucoes_E):
 
 'Cria o csv que irá armazenar todos os resultado para posteriormente gerar os gráficos'
 
-Cria_matriz_teste()
-
-
 tamanhos = [2048]
 threads = [2]
 versoes = [6]
@@ -183,6 +180,7 @@ versoes = [6]
 'Sempre antes de executar uma combinação Thread, tamanho, versão, verificar se ela já está satisfeita'
 'Satisfeita: Pelo menos 5 execuções e confiança abaixo do limite'
 for tamanho in tamanhos:
+    Cria_matriz_teste(tamanho)
     for thread in threads:
         for versao in versoes:
 
