@@ -9,6 +9,11 @@
 - [ ] Apêndices
 
 
+## Tarefas 18/11 - 25/11
+ - [ ] Ver diferentes modos de medir a energia
+    - [ ] Likwid
+ - [ ] Adaptar código para compilar diferentes otimizações
+
 ## Passo a passo:
 - [X] Iniciar o Scaphandre -- Shell Script
 - [X] Iniciar a multiplicação de matriz Shell Script
@@ -16,9 +21,9 @@
 - [X] Ajeitar o Json de uma linha para que, a última medida feita (Defeituosa) seja apagada -- Corrige.py
 - [X] Usar o "jq" para formatar o arquivo da maneira correta 
 - [X] Usar as expressões regulares para coletar os números --> Há maneira melhor? Tentar arquivo python
-    - [ ] Tentar trocar para pegar os resultados em python e não em Shell (Para encapsular melhor)
+    - [X] Tentar trocar para pegar os resultados em python e não em Shell (Para encapsular melhor)
 - [X] Salvar em csv para posteriormente gerar gráficos
-- [ ] Gerar os gráficos --> Produzir Arquivo Python & pensar em modo melhor de agregar os resultados para facilitar a geração
+- [X] Gerar os gráficos --> Produzir Arquivo Python & pensar em modo melhor de agregar os resultados para facilitar a geração
 
 ## Tarefas 30/09 - 07/10
 - [X] Terminar capítulo de experimentação com Scaphandre
