@@ -1,2 +1,4 @@
 sudo apt intall likwid
 sudo modprobe msr 
+Exemplo de comando
+sudo likwid-perfctr -C 0 -g ENERGY ./mult_paralelo m1 m2 6 2

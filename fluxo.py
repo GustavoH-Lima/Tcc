@@ -4,10 +4,11 @@ import os
 import subprocess
 import numpy as np
 from scipy.stats import t
-import time
 import matplotlib.pyplot as plt
 import random
 import json
+
+'Funções para iniciar os testes'
 def Cria_csv():
     'Cria o arquivo para armazenar os resultados caso ele não exista, faz nada caso contrário'
     if not os.path.exists("resultados.csv"): 
@@ -15,6 +16,7 @@ def Cria_csv():
             'Tamanho': [],
             'Versao': [],
             'Threads': [],
+            'Otimizacao':[],
             'Exec_T': [],
             'Media_T': [],
             'Confianca_T':[],
@@ -24,50 +26,48 @@ def Cria_csv():
         }
         df = pd.DataFrame(d)
         df.to_csv("resultados.csv", index=False)
-
-def Media_inicial(): #Por enquanto não usarei esta função
-    pass
-
 def Cria_matriz_teste(tamanho = 2048):
     'Função para criar as matrizes que serão usadas no teste'
     subprocess.run(["./gera", "m1", str(tamanho)])
     subprocess.run(["./gera", "m2" ,str(tamanho)])
 
-def coleta_consumo(pid_alvo,saida_scaph):
-    'Coleta a linha com as informações'
-    'Coleta o consumption'
-    padrao = rf'"pid"\s*:\s*{pid_alvo}.*?"consumption"\s*:\s*([0-9]+(?:\.[0-9]+)?)'
+'Funções para executar o programa e coletar as métricas'
+def extrair_metricas_likwid(saida):
+    """
+    Extrai:
+      - Energy [J]
+      - Runtime (RDTSC) [s]
+      - Energy DRAM [J]
+    da saída do comando likwid-perfctr.
+    """
+    # Energy [J]
+    padrao_energy = r"Energy \[J\]\s*\|\s*([0-9]+\.[0-9]+)"
+    m_energy = re.search(padrao_energy, saida)
+    energia = float(m_energy.group(1)) if m_energy else None
 
-    'Transforma em float'
-    consumos = [float(x) for x in re.findall(padrao, saida_scaph)]
+    # Runtime (RDTSC) [s]
+    padrao_runtime = r"Runtime \(RDTSC\) \[s\]\s*\|\s*([0-9]+\.[0-9]+)"
+    m_runtime = re.search(padrao_runtime, saida)
+    runtime = float(m_runtime.group(1)) if m_runtime else None
 
-    'Pegando a soma já em Joules'
-    resultado = sum(consumos)/1e6
-    return resultado
+    # Energy DRAM [J]
+    padrao_dram = r"Energy DRAM \[J\]\s*\|\s*([0-9]+\.[0-9]+)"
+    m_dram = re.search(padrao_dram, saida)
+    energia_dram = float(m_dram.group(1)) if m_dram else None
 
-def executa_programa(thread,versao): #ToDo
+    return energia, runtime, energia_dram
+def executa_programa(thread,versao): #Agora, Usando o likwid
     'Executa o programa e faz as medidas necessárias'
 
     #Executando o scaphandre para tomar as medições
-    scaph = subprocess.Popen([
-        "sudo","scaphandre","json",
-        "-s","1"],
-        stdout=subprocess.PIPE, stderr = subprocess.DEVNULL,text=True)
     
-    #Executando a multiplicação de matrizes
-    proc = subprocess.Popen(
-        ["./mult_paralelo", "m1", "m2", str(versao), str(thread)],
-        stdout=subprocess.PIPE, text=True
-    )
+    processo = subprocess.run([
+        "sudo","likwid-perfctr", "-C", "0", "-g", "ENERGY", 
+        "./mult_paralelo", "m1", "m2",str(versao),str(thread)],
+        stdout = subprocess.PIPE,stderr = subprocess.DEVNULL,text=True)
 
-    pid_proc = proc.pid
-    tempo = float(proc.communicate()[0].strip())
-    time.sleep(1.5)
-    scaph.kill()
-
-    saida_scaph = scaph.stdout.read()
-    energia = coleta_consumo(pid_proc,saida_scaph)
-    
+    saida = processo.stdout
+    energia, tempo, dram = extrair_metricas_likwid(saida)
     return tempo,energia
 
 'Funções para intervalo de confiança, etc'
@@ -96,7 +96,7 @@ def confianca_aceitavel(valores, limite):
     return (confidence(valores)) < limite
 
 'Função de verificação de controle'
-def combinacao_satisfeita(tamanho, thread, versao, limite_confianca=0.05): #Retorna Bool(Se está satisfeito), Lista de execuções de Tempo, Lista de execuções de Energia
+def combinacao_satisfeita(tamanho, thread, versao,otm, limite_confianca=0.05): #Retorna Bool(Se está satisfeito), Lista de execuções de Tempo, Lista de execuções de Energia
     'Função para verificar se já atingiu 5 execuções e se o limite está aceitável'
     Cria_csv()
     try:
@@ -108,7 +108,8 @@ def combinacao_satisfeita(tamanho, thread, versao, limite_confianca=0.05): #Reto
     filtro = (
         (df["Tamanho"] == tamanho) &
         (df["Threads"] == thread) &
-        (df["Versao"] == versao)
+        (df["Versao"] == versao) &
+        (df["Otimizacao"] == otm)
     )
     df_filtrado = df[filtro]
 
@@ -140,7 +141,7 @@ def combinacao_satisfeita(tamanho, thread, versao, limite_confianca=0.05): #Reto
     return confianca_energia and confianca_tempo,execucoes_T,execucoes_E
 
 'Função para salvar no Csv as informações parciais acerca do processo'
-def salva_media_csv(tamanho, thread, versao, execucoes_T, execucoes_E):
+def salva_media_csv(tamanho, thread, versao,otm, execucoes_T, execucoes_E):
 
     # Tomando as médias
     media_T = sum(execucoes_T) / len(execucoes_T)
@@ -154,7 +155,7 @@ def salva_media_csv(tamanho, thread, versao, execucoes_T, execucoes_E):
         df = pd.read_csv("resultados.csv")
     except FileNotFoundError:
         df = pd.DataFrame(columns=[
-            "Tamanho","Versao","Threads",
+            "Tamanho","Versao","Threads","Otimizacao",
             "Exec_T","Media_T","Confianca_T",
             "Exec_E","Media_E","Confianca_E"
         ])
@@ -163,7 +164,8 @@ def salva_media_csv(tamanho, thread, versao, execucoes_T, execucoes_E):
     filtro = (
         (df["Tamanho"] == tamanho) &
         (df["Threads"] == thread) &
-        (df["Versao"] == versao)
+        (df["Versao"] == versao) &
+        (df["Otimizacao"] == otm)
     )
 
     linha_json_T = json.dumps(execucoes_T)
@@ -182,7 +184,7 @@ def salva_media_csv(tamanho, thread, versao, execucoes_T, execucoes_E):
     else:
         # Caso não exista → criar nova linha
         df.loc[len(df)] = [
-            tamanho, versao, thread,
+            tamanho, versao, thread,otm,
             linha_json_T, media_T, conf_T,
             linha_json_E, media_E, conf_E
         ]
@@ -193,32 +195,41 @@ def salva_media_csv(tamanho, thread, versao, execucoes_T, execucoes_E):
 
 
 'Funções para plotar os resultados obtidos ao fim das execuções'
-def plota_resultados_versaoxmetrica(metric, threads_list, tamanho, nome_arquivo, titulo="Comparação de Versões"):
+def plota_resultados_versaoxmetrica(
+    metric,
+    threads_list,
+    tamanho,
+    otimizacao,
+    nome_arquivo,
+    titulo="Comparação de Versões"
+):
     """
+    Agora também filtra pela otimização usada (ex: -O0, -O1, -O2, -O3)
+
     Gera e salva um gráfico onde:
     - eixo X = versão do algoritmo
     - eixo Y = tempo médio ou energia média
     - várias curvas = diferentes números de threads
-    - filtrado por tamanho específico
-    - salva como PNG na pasta 'gráficos'
+    - filtrado por tamanho E otimização
     """
 
     # Ler o CSV
     df = pd.read_csv("resultados.csv")
 
-    # Filtrar pelo tamanho fornecido
-    df = df[df["Tamanho"] == tamanho]
+    # Filtrar pelo tamanho e pela otimização
+    df = df[(df["Tamanho"] == tamanho) & (df["Otimizacao"] == otimizacao)]
 
     if df.empty:
-        raise ValueError(f"Não há dados para tamanho {tamanho} no CSV.")
+        raise ValueError(
+            f"Não há dados para tamanho={tamanho} e Otimizacao={otimizacao} no CSV."
+        )
 
     # Validar métrica
     if metric not in ["Media_T", "Media_E"]:
         raise ValueError("metric deve ser 'Media_T' ou 'Media_E'.")
 
     # Criar pasta 'gráficos' se não existir
-    if not os.path.exists("gráficos"):
-        os.makedirs("gráficos")
+    os.makedirs("gráficos", exist_ok=True)
 
     plt.figure(figsize=(10, 6))
 
@@ -227,24 +238,29 @@ def plota_resultados_versaoxmetrica(metric, threads_list, tamanho, nome_arquivo,
         df_th = df[df["Threads"] == th]
 
         if df_th.empty:
-            print(f"Aviso: não há dados para {th} threads e tamanho {tamanho}.")
+            print(f"Aviso: não há dados para {th} threads, tamanho {tamanho}, otimização {otimizacao}.")
             continue
 
         # Grupo por versão e pega média
         df_group = df_th.groupby("Versao")[metric].mean().reset_index()
 
-        plt.plot(df_group["Versao"], df_group[metric], marker="o", label=f"{th} threads")
+        plt.plot(
+            df_group["Versao"],
+            df_group[metric],
+            marker="o",
+            label=f"{th} threads"
+        )
 
     # Labels e título
     plt.xlabel("Versão do algoritmo")
     plt.ylabel("Tempo (s)" if metric == "Media_T" else "Energia (J)")
-    plt.title(f"{titulo}\n(Tamanho = {tamanho})")
+    plt.title(f"{titulo}\n(Tamanho={tamanho}, Otimização=O{otimizacao})")
     plt.grid(True, linestyle="--", alpha=0.3)
     plt.legend(title="Threads")
     plt.tight_layout()
 
     # Caminho do arquivo de saída
-    caminho_png = os.path.join("gráficos", nome_arquivo + ".png")
+    caminho_png = os.path.join("gráficos", nome_arquivo + f"_O{otimizacao}.png")
 
     # Salvar como PNG
     plt.savefig(caminho_png, dpi=300)
@@ -256,6 +272,7 @@ def plotar_comparacao_por_tamanho(
     metrica,
     threads_lista,
     versao,
+    otimizacao,
     nome_arquivo,
     titulo="Comparação de tamanhos"
 ):
@@ -270,11 +287,11 @@ def plotar_comparacao_por_tamanho(
         print("❌ Arquivo resultados.csv não encontrado.")
         return
     
-    # Filtrar por versão
-    df = df[df["Versao"] == versao]
+    # Filtrar por versão e otimização
+    df = df[(df["Versao"] == versao) & (df["Otimizacao"] == otimizacao)]
 
     if df.empty:
-        print(f"❌ Nenhum dado encontrado para a versão {versao}.")
+        print(f"❌ Nenhum dado encontrado para versão {versao} e otimização O{otimizacao}.")
         return
 
     # Validar métrica
@@ -308,14 +325,14 @@ def plotar_comparacao_por_tamanho(
 
     plt.xlabel("Tamanho da Matriz (N)")
     plt.ylabel(metric_label)
-    plt.title(titulo + f" (Versão {versao})")
+    plt.title(f"{titulo} (Versão {versao}, Otimização O{otimizacao})")
     plt.legend()
     plt.grid(True)
 
-    # ticks exatos do dataset
+    # Definir ticks apenas para tamanhos existentes
     plt.xticks(tamanhos_disponiveis)
 
-    caminho_linha = os.path.join("gráficos", f"{nome_arquivo}_linhas.png")
+    caminho_linha = os.path.join("gráficos", f"{nome_arquivo}_O{otimizacao}_linhas.png")
     plt.savefig(caminho_linha, dpi=300, bbox_inches="tight")
     plt.close()
 
@@ -350,12 +367,15 @@ def plotar_comparacao_por_tamanho(
 
     plt.xlabel("Tamanho da Matriz (N)")
     plt.ylabel(metric_label)
-    plt.title(titulo + f" (Versão {versao})")
-    plt.xticks(posicoes + largura * (len(threads_lista)-1) / 2, tamanhos_disponiveis)
+    plt.title(f"{titulo} (Versão {versao}, Otimização O{otimizacao})")
+    plt.xticks(
+        posicoes + largura * (len(threads_lista)-1) / 2,
+        tamanhos_disponiveis
+    )
     plt.legend()
     plt.grid(axis="y", linestyle="--", alpha=0.5)
 
-    caminho_barras = os.path.join("gráficos", f"{nome_arquivo}_barras.png")
+    caminho_barras = os.path.join("gráficos", f"{nome_arquivo}_O{otimizacao}_barras.png")
     plt.savefig(caminho_barras, dpi=300, bbox_inches="tight")
     plt.close()
 
@@ -365,13 +385,14 @@ def plotar_melhoria_fixa(
     metrica,
     threads_lista,
     versao,
+    otimizacao,
     tamanho,
     nome_arquivo,
     titulo="Tamanho x Tempo"
 ):
     """
     Compara aceleração relativa à execução com 1 thread,
-    para uma versão e tamanho fixos.
+    filtrando por versão, tamanho e otimização.
     Gera gráficos de linhas e barras.
     """
 
@@ -390,11 +411,15 @@ def plotar_melhoria_fixa(
 
     metric_label = "Aceleração (Tempo)" if metrica == "Media_T" else "Aceleração (Energia)"
 
-    # Filtrar pela versão e tamanho
-    df = df[(df["Versao"] == versao) & (df["Tamanho"] == tamanho)]
+    # Filtrar pela versão, tamanho e otimização
+    df = df[
+        (df["Versao"] == versao) &
+        (df["Tamanho"] == tamanho) &
+        (df["Otimizacao"] == otimizacao)
+    ]
 
     if df.empty:
-        print(f"❌ Não há dados para versão {versao} e tamanho {tamanho}.")
+        print(f"❌ Não há dados para versão {versao}, tamanho {tamanho} e otimização O{otimizacao}.")
         return
 
     # Verificar se existe 1 thread
@@ -433,11 +458,11 @@ def plotar_melhoria_fixa(
     plt.plot(threads_disponiveis, aceleracoes, marker="o")
     plt.xlabel("Número de Threads")
     plt.ylabel(metric_label)
-    plt.title(f"{titulo} — Versão {versao} — Tamanho {tamanho}")
+    plt.title(f"{titulo} — Versão {versao} — O{otimizacao} — Tamanho {tamanho}")
     plt.grid(True)
     plt.xticks(threads_disponiveis)
 
-    caminho_linhas = os.path.join("gráficos", f"{nome_arquivo}_melhoria_linhas.png")
+    caminho_linhas = os.path.join("gráficos", f"{nome_arquivo}_O{otimizacao}_melhoria_linhas.png")
     plt.savefig(caminho_linhas, dpi=300, bbox_inches="tight")
     plt.close()
 
@@ -451,47 +476,51 @@ def plotar_melhoria_fixa(
     plt.bar(threads_disponiveis, aceleracoes)
     plt.xlabel("Número de Threads")
     plt.ylabel(metric_label)
-    plt.title(f"{titulo} — Versão {versao} — Tamanho {tamanho}")
+    plt.title(f"{titulo} — Versão {versao} — O{otimizacao} — Tamanho {tamanho}")
     plt.grid(axis="y", linestyle="--", alpha=0.5)
     plt.xticks(threads_disponiveis)
 
-    caminho_barras = os.path.join("gráficos", f"{nome_arquivo}_melhoria_barras.png")
+    caminho_barras = os.path.join("gráficos", f"{nome_arquivo}_O{otimizacao}_melhoria_barras.png")
     plt.savefig(caminho_barras, dpi=300, bbox_inches="tight")
     plt.close()
 
     print(f"✔ Gráfico de barras salvo em: {caminho_barras}")
 
-tamanhos = [1024,2048,4096,8192]
-threads = [1,2,4]
+# tamanhos = [1024,2048,4096,8192]
+tamanhos = [1024]
+threads = [2]
 versoes = [1,2,3,4,5,6]
-
-
+otimizacao = [0,1,2,3]
 
 'Fluxo de execução: Executar todos os números de Thread para cada tamanho'
 'Depois seguir adiante para o próximo tamanho e repetir'
 'Sempre antes de executar uma combinação Thread, tamanho, versão, verificar se ela já está satisfeita'
 'Satisfeita: Pelo menos 5 execuções e confiança abaixo do limite'
-for tamanho in tamanhos:
-    Cria_matriz_teste(tamanho)
-    for thread in threads:
-        for versao in versoes:
+for otm in otimizacao:
+    subprocess.run([
+        "gcc","O"+str(otm) ,"-o","mult_paralelo", "func.c","paralelo_matmul.c",
+        "-Wall", "-fopenmp"],stderr = subprocess.DEVNULL)
+    for tamanho in tamanhos:
+        Cria_matriz_teste(tamanho)
+        for thread in threads:
+            for versao in versoes:
 
-            # 1. Verificar no CSV se já existe essa combinação
-            sats,resultados_T,resultados_E=combinacao_satisfeita(tamanho, thread, versao)
-            
-            if(sats):
-                continue  # pula para a próxima
+                # 1. Verificar no CSV se já existe essa combinação
+                sats,resultados_T,resultados_E=combinacao_satisfeita(tamanho, thread, versao,otm)
+                
+                if(sats):
+                    continue  # pula para a próxima
 
-            # 2. Caso contrário, executar até satisfazer
-            while len(resultados_T) < 5 or not (confianca_aceitavel(resultados_T,0.05) and confianca_aceitavel(resultados_E,0.05)):
-                # tempo,energia = executa_programa(thread, versao)
-                tempo,energia = random.randint(1,10),random.randint(1,10)
-                resultados_T.append(tempo)
-                resultados_E.append(energia)
+                # 2. Caso contrário, executar até satisfazer
+                while len(resultados_T) < 5 or not (confianca_aceitavel(resultados_T,0.05) and confianca_aceitavel(resultados_E,0.05)):
+                    # tempo,energia = executa_programa(thread, versao)
+                    tempo,energia = random.randint(14,18),random.randint(6,10)
+                    resultados_T.append(tempo)
+                    resultados_E.append(energia)
 
-                # salva no CSV cada execução além de computar média e confiança
-                salva_media_csv(tamanho, thread, versao, resultados_T,resultados_E)
+                    # salva no CSV cada execução além de computar média e confiança
+                    salva_media_csv(tamanho, thread, versao, otm,resultados_T,resultados_E)
 
-plota_resultados_versaoxmetrica("Media_T",[1,2,4],2048,"Comparação de Tempo")
-plotar_comparacao_por_tamanho("Media_T",[1,2,4],6,"Tamanho x Tempo")
-plotar_melhoria_fixa("Media_T",[1,2,4],6,2048,"Tamanho x Tempo")
+plota_resultados_versaoxmetrica("Media_T",[1,2,4],1024,1,"Comparação de Tempo")
+plotar_comparacao_por_tamanho("Media_T",[1,2,4],6,1,"Tamanho x Tempo")
+plotar_melhoria_fixa("Media_T",[1,2,4],6,1,1024,"Tamanho x Tempo")
