@@ -486,9 +486,9 @@ def plotar_melhoria_fixa(
 
     print(f"✔ Gráfico de barras salvo em: {caminho_barras}")
 
-# tamanhos = [1024,2048,4096,8192]
-tamanhos = [1024]
-threads = [2]
+tamanhos = [1024,2048,4096,8192]
+# tamanhos = [1024]
+threads = [1,2,4]
 versoes = [1,2,3,4,5,6]
 otimizacao = [0,1,2,3]
 
@@ -498,8 +498,8 @@ otimizacao = [0,1,2,3]
 'Satisfeita: Pelo menos 5 execuções e confiança abaixo do limite'
 for otm in otimizacao:
     subprocess.run([
-        "gcc","O"+str(otm) ,"-o","mult_paralelo", "func.c","paralelo_matmul.c",
-        "-Wall", "-fopenmp"],stderr = subprocess.DEVNULL)
+        "gcc","-O"+str(otm) ,"-o","mult_paralelo", "func.c","paralelo_matmul.c",
+        "-Wall", "-fopenmp"],stderr = subprocess.DEVNULL,check=True)
     for tamanho in tamanhos:
         Cria_matriz_teste(tamanho)
         for thread in threads:
@@ -513,8 +513,8 @@ for otm in otimizacao:
 
                 # 2. Caso contrário, executar até satisfazer
                 while len(resultados_T) < 5 or not (confianca_aceitavel(resultados_T,0.05) and confianca_aceitavel(resultados_E,0.05)):
-                    # tempo,energia = executa_programa(thread, versao)
-                    tempo,energia = random.randint(14,18),random.randint(6,10)
+                    tempo,energia = executa_programa(thread, versao)
+                    # tempo,energia = random.randint(14,18),random.randint(6,10)
                     resultados_T.append(tempo)
                     resultados_E.append(energia)
 
